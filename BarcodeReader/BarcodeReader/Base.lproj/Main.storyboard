@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarcodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo7-Z6-wJY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="c3l-Mq-eGI"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="MAg-0I-g2E" kind="embed" id="XAv-mN-B68"/>
+                                </connections>
+                            </containerView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHu-Lb-Bkt">
+                                <rect key="frame" x="0.0" y="180" width="375" height="487"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wHu-Lb-Bkt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1fx-eu-yag"/>
+                            <constraint firstItem="Lo7-Z6-wJY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7ei-A8-TnG"/>
+                            <constraint firstItem="Lo7-Z6-wJY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ao7-id-XOM"/>
+                            <constraint firstItem="Lo7-Z6-wJY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FtF-XU-aLO"/>
+                            <constraint firstItem="wHu-Lb-Bkt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dnf-pb-e4X"/>
+                            <constraint firstItem="wHu-Lb-Bkt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eFu-Qg-Ojq"/>
+                            <constraint firstItem="wHu-Lb-Bkt" firstAttribute="top" secondItem="Lo7-Z6-wJY" secondAttribute="bottom" id="yli-Lp-eGr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="wHu-Lb-Bkt" id="R7y-Ro-qHY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Barcode Reader View Controller-->
+        <scene sceneID="Aoy-T1-ozT">
+            <objects>
+                <viewController id="MAg-0I-g2E" customClass="BarcodeReaderViewController" customModule="BarcodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ww-tg-A4d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="0iD-ro-NBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bt-yG-AzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="-112"/>
+        </scene>
+    </scenes>
+</document>
